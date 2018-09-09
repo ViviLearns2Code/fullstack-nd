@@ -1,0 +1,386 @@
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body{
+	font-size: 14px;
+	font-family: sans-serif;
+	color: #008CBA;
+}
+.app{
+	width: 960px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.app-title{
+	width: 50%;
+	text-align: left;
+}
+.info{
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+#text{
+	margin: 25% auto;
+	text-align: center;
+}
+.header{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #ffffff;
+	background-color: #4CAF50;
+	display: flex;
+	flex-wrap: wrap;
+}
+.toolbar{
+	width: 50%;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+.btn{
+	margin: 5px;
+	background-color: #008CBA;
+	border-radius: 8px;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem;
+}
+.btn:hover {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24), 0 1px 2px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    background-color: #047094;
+}
+.content{
+	width: 100%;
+}
+.cat-title-bar{
+	width: 100%;
+	padding: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.cat-title{
+	width: 75%;
+	color: #008CBA;
+}
+.cat-add{
+	width: 25%;
+	text-align: right;
+	color: #008CBA;
+}
+.cat-add span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.cat{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	border: 1px solid #4CAF50;
+	margin-top: 5px;
+	background-color: #d2f1af;
+}
+.cat-name{
+	width: 70%;
+	color: #008CBA;
+	padding: 10px;
+}
+.cat-action{
+	width: 30%;
+	padding: 10px;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.cat-btn{
+	width: 30%;
+	padding: 5px;
+	text-align: center;
+	color: #008CBA;
+}
+.cat-btn:hover{
+	background: #ffffff;
+	padding: 5px;
+	cursor: pointer;
+	color: #008CBA;
+}
+.cat-nav a{
+	display:block;
+	color: #008CBA;
+}
+/* category page CSS: modals */
+.modal{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #e7e7e7;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-hide{
+	display: none;
+}
+.modal-box{
+	position: fixed;
+	text-align: center;
+    background-color: #ffffff;
+    top: 25%;
+    left: 25%;
+    border: 1px solid #245927;
+    width: 50%;
+}
+.modal-footer{
+	background-color: #4CAF50;
+	border-top: 1px solid #245927;
+	padding: 2px;
+}
+.modal-header{
+	background-color: #4CAF50;
+	padding: 10px;
+	color: #ffffff;
+	border-bottom: 1px solid #245927;
+}
+.modal-header h4{
+	margin: 2px;
+}
+.modal-content{
+	padding: 5px;
+	color: #008CBA;
+}
+.modal-content input{
+	color: #008CBA;
+	font-size: 1rem;
+	font-family: sans-serif;
+	max-width: 100%;
+}
+#errorDelete, #errorRename, #errorCreate{
+	color: #f44336;
+}
+/* item page CSS */
+.nav{
+	padding: 2px;
+}
+.nav a{
+	text-decoration: none;
+	color: #008CBA;
+}
+.item-title-bar{
+	width: 100%;
+	padding: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.item-title{
+	width: 75%;
+	color: #008CBA;
+}
+.item-add{
+	width: 25%;
+	text-align: right;
+}
+.item-add a{
+	text-decoration: none;
+	color: #008CBA;
+}
+.item-add a:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.item-hide{
+	padding-bottom: 1rem;
+}
+.item{
+	width: 100%;
+}
+.hide-content > .item-content{
+	display: none;
+}
+.item-header{
+	border: 1px solid #4CAF50;
+	background-color: #d2f1af;
+    cursor: pointer;
+    transition: 0.4s;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+	align-items: center;
+}
+.item-header-title{
+	width: 80%;
+	padding: 10px;
+}
+.item-header-action{
+	padding: 10px;
+	width: 20%;
+	text-align: right;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.item-btn{
+	color: #008CBA;
+	width: 50%;
+	padding: 5px;
+	text-align: center;
+}
+.item-edit a{
+	display: block;
+	color: #008CBA;
+	text-decoration: none;
+}
+.item-btn:hover{
+	background: #ffffff;
+	padding: 5px;
+}
+.item-content{
+	padding: 10px; /* do not change */
+    transition: 0.2s ease-out;
+	border-left: 1px solid #4CAF50;
+	border-bottom: 1px solid #4CAF50;
+	border-right: 1px solid #4CAF50;
+}
+.hide-whole-item{
+	display: none;
+}
+/* edit/create item CSS */
+.itm-form-title-bar{
+	width: 100%;
+	padding: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.itm-form-title{
+	width: 75%;
+	color: #008CBA;
+}
+.itm-form-save{
+	width: 25%;
+	text-align: right;
+}
+.itm-form-save span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+	color: #008CBA;
+}
+.middle{
+	width: 80%;
+	max-width: 100%;
+	margin: auto;
+}
+#errorItmSave, #errorMsgItm{
+	color: #f44336;
+	width: 100%;
+	padding: 5px;
+}
+.mandatory:after{
+	content: "*";
+	color: #f44336;
+}
+.form-align{
+	display: table;
+	width: 100%;
+	max-width: 100%;
+}
+.form-align p{
+	display: table-row;
+	margin: 5px;
+}
+.form-align label{
+	display: table-cell;
+	vertical-align: middle;
+	margin: 5px;
+	width: 8rem;
+}
+.form-align input{
+	color: #008CBA;
+	display: table-cell;
+	width: 25rem;
+	overflow: hidden;
+	margin: 5px;
+	font-size: 1rem;
+	font-family: sans-serif;
+}
+#itm-desc{
+	color: #008CBA;
+	display: table-cell;
+	width: 25rem;
+	height: 5rem;
+	resize: none;
+	margin: 5px;
+	font-size: 1rem;
+	font-family: sans-serif;
+}
+@media screen and (max-width: 600px) {
+	/* responsive */
+	.form-align{
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+	.form-align p{
+		display: block;
+		margin: 5px;
+	}
+	.form-align label{
+		display: block;
+		margin: 5px;
+	}
+	.form-align input{
+		display: block;
+		overflow: hidden;
+		width: 25rem;
+		max-width: 100%;
+		margin: 5px;
+		color: #008CBA;
+		font-size: 1rem;
+		font-family: sans-serif;
+	}
+	#itm-desc{
+		color: #008CBA;
+		display: block;
+		width: 25rem;
+		max-width: 100%;
+		height: 5rem;
+		resize: none;
+		margin: 5px;
+		font-size: 1rem;
+		font-family: sans-serif;
+	}
+}
+#rsrc-list{
+	margin: 0px;
+	padding: 5px 0px 0px 0px;
+}
+.rsrc-li{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.rsrc-add span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.rsrc-box{
+	width: 100%;
+}
+.rsrc-box-del{
+	float: right;
+}
+.rsrc-box-del span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.rsrc-box-del:after{
+	clear: both;
+}

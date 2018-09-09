@@ -1,0 +1,77 @@
+{% extends "common.html" %}
+{% block js %}
+    <script src="{{ url_for('static', filename='js/editItem.js') }}"></script>
+{% endblock %}
+{% block nav %}
+    <nav class="nav">
+        <a href="/cat/{{ category.id }}/item/"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Item list</a>
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="itm-form-title-bar">
+        <div class="itm-form-title">
+            <h3>Edit item data</h3>
+        </div>
+        <div class="itm-form-save">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            <span id="saveItem">Save changes</span>
+        </div>
+    </div>
+    <div id="errorItmSave">
+        <p id="errorMsgItmSave"></p>
+    </div>
+    <div class="middle">
+        <form class="form-align">
+            <p>
+                <label for="itm-name" class="mandatory">Name</label>
+                <input value="{{ item.name }}" id="itm-name">
+            </p>
+            <p>
+                <label for="itm-desc">Description</label>
+                <textarea id="itm-desc">{{ item.description }}</textarea>
+            </p>
+            <p>
+                <label for="itm-done">Status</label>
+                {% if item.done %}
+                <input id="itm-done" type="checkbox" checked>
+                {% else %}
+                <input id="itm-done" type="checkbox">
+                {% endif %}
+            </p>
+        </form>
+        <div class="rsrc-title">
+            <div class="rsrc-text">
+                <h4>Resources</h4>
+            </div>
+            <div class="rsrc-add">
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                <span id="addRsrc">Add new resource</span>
+            </div>
+        </div>
+        <ul id="rsrc-list">
+        {% for r in item.resources %}
+            <li data-id="{{ r.id }}" class="rsrc-li">
+                <div class="rsrc-box">
+                    <form class="form-align">
+                    <p>
+                        <label for="rsrc_{{ r.id }}_name" class="mandatory">Name</label>
+                        <input type="text" id="rsrc_{{ r.id }}_name" data-orgval="{{ r.name }}" value="{{ r.name }}">
+                    </p>
+                    <p>
+                        <label for="rsrc_{{ r.id }}_url">URL</label><input id="rsrc_{{ r.id }}_url" data-orgval="{{ r.url }}" value="{{ r.url }}">
+                    </p>
+                    </form>
+                    <div class="rsrc-box-del">
+                        <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+                        <span class="rsrc-db-del">Remove resource</span>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        var categoryId = {{ category.id }};
+        var itemId = {{ item.id }};
+    </script>
+{% endblock %}

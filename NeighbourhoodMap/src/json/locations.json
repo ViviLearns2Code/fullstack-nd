@@ -1,0 +1,69 @@
+[
+	{
+		"name": "Stadtgarten Bruchsal",
+		"street": "Am Stadtgarten",
+		"zip": "76646",
+		"city": "Bruchsal",
+		"country": "Germany"
+	}, {
+		"name": "Otto-Dullenkopf Park",
+		"street": "Schlachthausstraße 9A",
+		"zip": "76131",
+		"city": "Karlsruhe",
+		"country": "Germany"
+	}, {
+		"name": "Günther Klotz Park",
+		"street": "Junker-und-Ruh-Weg ",
+		"zip": "76135",
+		"city": "Karlsruhe",
+		"country": "Germany"
+	}, {
+		"name": "Schloss Karlsruhe",
+		"street": "Schloßbezirk 10",
+		"zip": "76131",
+		"city": "Karlsruhe",
+		"country": "Germany"
+	}, {
+		"name": "Zoo Heidelberg",
+		"street": "Tiergartenstraße 3",
+		"zip": "69120",
+		"city": "Heidelberg",
+		"country": "Germany"
+	}, {
+		"name": "Schlossgarten Heidelberg",
+		"street": "Schloß-Wolfsbrunnenweg 18",
+		"zip": "69117",
+		"city": "Heidelberg",
+		"country": "Germany"
+	}, {
+		"name": "Neckarwiese",
+		"street": "Uferstraße",
+		"zip": "69120",
+		"city": "Heidelberg",
+		"country": "Germany"
+	}, {
+		"name": "Schwetzinger Schlossgarten",
+		"street": "Am Schloß Schwetzingen",
+		"zip": "68723",
+		"city": "Schwetzingen",
+		"country": "Germany"
+	}, {
+		"name": "Luisenpark Mannheim",
+		"street": "Theodor-Heuss-Anlage 2",
+		"zip": "68165",
+		"city": "Mannheim",
+		"country": "Germany"
+	}, {
+		"name": "Eremitage Waghäusel",
+		"street": "Stadt Waghäusel",
+		"zip": "68753",
+		"city": "Waghäusel",
+		"country": "Germany"
+	}, {
+		"name": "Astorpark",
+		"street": "Ringstraße 45",
+		"zip": "69190",
+		"city": "Walldorf",
+		"country": "Germany"
+	}
+]

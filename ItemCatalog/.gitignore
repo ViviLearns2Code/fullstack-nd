@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+tolearn.db
+populate_database.py

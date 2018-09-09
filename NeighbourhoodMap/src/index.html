@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Neighbourhood Map</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="filter-bar">
+			<div class="icon-bar">
+				<button id="toggleMenu" class="icon" data-bind="click: toggleMenu">
+				<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</div><div class="control-bar">
+				<select id="filterBy" data-bind="value: filter">
+					<option value="name">Name</option>
+					<option value="city">City</option>
+				</select>
+				<input data-bind="attr:{placeholder: placeholder},textInput: filterTerm">
+			</div>
+		</div>
+		<div class="content">
+			<div id="list" class="list" data-bind="css: {'hide': !menuExpanded()}">
+				<ul id="locationList" data-bind="foreach: locations">
+					<li data-bind="text: name, click: $parent.onClick"></li>
+				</ul>
+			</div>
+			<div class="main">
+				<div id="messagePanel" data-bind="css: {'message-panel': errorsExist(), 'hide': !errorsExist()||msgClose()}">
+					<span data-bind="click: onCloseMsg, css: {'close-msgpanel': !msgClose(), 'hide': msgClose()}">x</span>
+					<ul id="messageList" data-bind="foreach: errorMessages">
+					<li data-bind="text: $data" class="message-li"></li>
+					</ul>
+				</div>
+				<div class="map">
+					<div id="map" class="google-map">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/nbmap.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl4xQDXyyT11Qc2_DT7ZXln2tgypd8knE&libraries=places&callback=startApp" onerror="onGoogleError()">
+	</script>
+</body>
+</html>

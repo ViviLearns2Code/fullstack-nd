@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}ToLearn{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    {% block js %} {% endblock %}
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            {% block header %}
+            <div class="app-title">
+                <h3>Have fun learning, {{ name }}!</h3>
+            </div>
+            <div class="toolbar">
+                <button class="btn" id="logout-btn">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button>
+                <button class="btn" id="api-token">
+                    <i class="fa fa-key" aria-hidden="true"></i> Get API token</button>
+            </div>
+            {% endblock %}
+        </header>
+        {% block nav %} {% endblock %}
+        <main class="content">
+            {% block content %} {% endblock %}
+        </main>
+        <footer>
+            {% block footer %} {% endblock %}
+        </footer>
+        {% block modals %}
+        <div id="modalWait" class="modal modal-hide">
+                <h4 id="text"></h4>
+        </div>
+        {% endblock %}
+        <script>
+        var onSignOut = function() {
+            signOutReq = $.ajax({
+                type: "GET",
+                url: "/gdisconnect",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                contentType: "application/octet-stream; charset=utf-8",
+                processData: false
+            });
+            signOutReq.then(function(data,textStatus,errorThrown) {
+                $("#modalWait").toggleClass("modal-hide");
+                $("#text").html("Signing out...");
+                setTimeout(function() {
+                    window.location.href = "/";
+                }, 3000)
+            }, function(jqXHR,textStatus,errorThrown) {
+                alert(jqXHR.responseJSON.error);
+            });
+        };
+        $("#logout-btn").on("click", onSignOut);
+        $("#api-token").on("click", function(e) {
+            window.open("/api/token/");
+        });
+        </script>
+</body>
+
+</html>

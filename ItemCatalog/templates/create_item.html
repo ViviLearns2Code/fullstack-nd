@@ -1,0 +1,55 @@
+{% extends "common.html" %}
+{% block js %}
+    <script src="{{ url_for('static', filename='js/createItem.js') }}"></script>
+{% endblock %}
+{% block nav %}
+    <nav class="nav">
+        <a href="/cat/{{ category.id }}/item/"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Item list</a>
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="itm-form-title-bar">
+        <div class="itm-form-title">
+            <h3>Create new item</h3>
+        </div>
+        <div class="itm-form-save">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            <span id="createItem">Create Item</span>
+        </div>
+    </div>
+    <div id="errorItmSave">
+        <p id="errorMsgItmSave"></p>
+    </div>
+        <div class="middle">
+            <form class="form-align">
+            <p>
+                <label for="itm-name" class="mandatory">Name</label>
+                <input id="itm-name">
+            </p>
+            <p>
+                <label for="itm-desc">Description</label>
+                <textarea id="itm-desc"></textarea>
+            </p>
+            <p>
+                <label for="itm-done">Status</label>
+                <input type="checkbox" id="itm-done">
+            </p>
+            </form>
+            <div class="rsrc-title">
+                <div class="rsrc-text">
+                    <h4>Resources</h4>
+                </div>
+                <div class="rsrc-add">
+                    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                    <span id="addRsrc">Add new resource</span>
+                </div>
+            </div>
+            <!-- insert templates here -->
+            <ul id="rsrc-list">
+            </ul>
+        </div>
+    </div>
+    <script>
+        var categoryId = {{ category.id }};
+    </script>
+{% endblock %}

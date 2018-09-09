@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-md-4">
+                <span class="title-logo"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+            </div>
+            <div class="col-md-8 text-right title-name text-uppercase">
+                <h1 class="text-thin title-super">Mary Sue</h1>
+                <h4>Front-end Ninja</h4>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+
+        <!-- main content wrapper -->
+        <main class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="img-responsive center-block" src="http://placekitten.com/1440/150" alt="Meow">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-muted">My Work</h2>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <img class="img-responsive center-block" src="images/MovieWebsite-1x.jpg" srcset="images/MovieWebsite-1x.jpg 600w, images/MovieWebsite-2x.jpg 1352w" alt="Movie Website" data-toggle="modal" data-target="#modalMovieWebsite" sizes="300px">
+                        <h3 class="text-uppercase">Movie Website</h3>
+                        <a href="https://github.com/ViviLearns2Code/MovieWebsite" target="_blank">Github Link</a>
+                        <p class="status">Completed</p>
+                        <p class="project-tags">Tags: HTML, CSS</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <img class="img-responsive center-block" src="http://via.placeholder.com/300x220" alt="Logs Analysis" data-toggle="modal" data-target="#modalLogsAnalysis">
+                        <h3 class="text-uppercase">Logs Analysis</h3> Github Link
+                        <p class="status">Not started</p>
+                        <p class="project-tags">Tags: None yet</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <img class="img-responsive center-block" src="images/NeighbourhoodMap-1x.jpg" srcset="images/NeighbourhoodMap-1x.jpg 600w, images/NeighbourhoodMap-2x.jpg 1352w" alt="Neighbourhood Map" data-toggle="modal" data-target="#modalNeighbourhood" sizes="300px">
+                        <h3 class="text-uppercase">Neighbourhood Map</h3>
+                        <a href="https://github.com/ViviLearns2Code/NeighbourhoodMap" target="_blank">Github Link</a>
+                        <p class="status">In progress</p>
+                        <p class="project-tags">Tags: JavaScript, CSS</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer row">
+            <div class="col-md-12 text-center">
+                <p>Kitty banner taken from <a href="http://placekitten.com" target="_blank">placekitten</a></p>
+            </div>
+        </footer>
+        <!-- Modals -->
+        <div class="modal fade" id="modalMovieWebsite" tabindex="-1" role="dialog" aria-labelledby="labelMovieWebsite" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="labelMovieWebsite">Movie Website</h4>
+                    </div>
+                    <div class="modal-body">
+                        This is a text describing the project Movie Website.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalNeighbourhood" tabindex="-1" role="dialog" aria-labelledby="labelNeighbourhood" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="labelNeighbourhood">Neighbourhood Map</h4>
+                    </div>
+                    <div class="modal-body">
+                        This is a text describing the project Neighbourhood Map.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modalLogsAnalysis" tabindex="-1" role="dialog" aria-labelledby="labelLogsAnalysis" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="labelLogsAnalysis">Logs Analysis</h4>
+                    </div>
+                    <div class="modal-body">
+                        This is a text describing the project Logs Analysis.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{% extends "common.html" %}
+{% block js %}
+    <script>
+    function start() {
+        gapi.load("auth2", function() {
+            auth2 = gapi.auth2.init({
+                client_id: "628335156384-ngfmae7psaot8kf97d94jke30ur8p40l.apps.googleusercontent.com",
+                redirect_uri: "postmessage"
+            })
+        })
+    }
+    </script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
+{% block header %}
+    <div class="app-title">
+        <h1>ToLearn: Learn Every Day</h1>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="info">
+        <p>Log in to start learning!</p>
+        <button class="btn" id="login-btn">
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            Sign in
+        </button>
+    </div>
+    <script>
+        var tolearnState = "{{ STATE }}";
+    </script>
+{% endblock %}

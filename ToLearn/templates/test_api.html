@@ -1,0 +1,64 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<button id="send_request">Request Categories</button>
+<button id="send_request2">Request items of category 4</button>
+<button id="send_request3">Request item 3 (category 4)</button>
+<p id="json"></p>
+<script>
+var token = "eyJleHAiOjE1MDQyMTE2NTcsImlhdCI6MTUwNDIwODA1NywiYWxnIjoiSFMyNTYifQ.eyJpZCI6Mn0.S6eKpLcmGmaSQT3BFmA7bsHjQJBAx0kE5uNU2YbGgc8";
+
+$("#send_request").on("click", function(){
+	header = {
+		"Authorization" : "bearer " + token
+	};
+	rq = $.ajax({
+		url : "/api/cat/",
+		headers: header
+	});
+	rq.then(function(data, textStatus, jqXHR){
+		var json = JSON.stringify(data, null, 4);
+		$("#json").html(json);
+	}, function(jqXHR, textStatus, errorThrown){
+		var json = JSON.stringify(jqXHR.responseJSON, null, 4);
+		$("#json").html(json);
+	})
+});
+$("#send_request2").on("click", function(){
+	header = {
+		"Authorization" : "bearer " + token
+	};
+	rq = $.ajax({
+		url : "/api/cat/4/item/",
+		headers: header
+	});
+	rq.then(function(data, textStatus, jqXHR){
+		var json = JSON.stringify(data, null, 4);
+		$("#json").html(json);
+	}, function(jqXHR, textStatus, errorThrown){
+		var json = JSON.stringify(jqXHR.responseJSON, null, 4);
+		$("#json").html(json);
+	})
+});
+$("#send_request3").on("click", function(){
+	header = {
+		"Authorization" : "bearer " + token
+	};
+	rq = $.ajax({
+		url : "/api/cat/4/item/3/",
+		headers: header
+	});
+	rq.then(function(data, textStatus, jqXHR){
+		var json = JSON.stringify(data, null, 4);
+		$("#json").html(json);
+	}, function(jqXHR, textStatus, errorThrown){
+		var json = JSON.stringify(jqXHR.responseJSON, null, 4);
+		$("#json").html(json);
+	})
+});
+</script>
+</body>
+
+</html>

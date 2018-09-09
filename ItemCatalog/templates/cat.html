@@ -1,0 +1,93 @@
+{% extends "common.html" %}
+{% block js %}
+    <script src="{{ url_for('static', filename='js/cat.js') }}"></script>
+{% endblock %}
+{% block content %}
+    <div class="cat-title-bar">
+        <div class="cat-title">
+            <h3>Learning Categories</h3>
+        </div>
+        <div class="cat-add">
+            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            <span id="addNewCat">
+                Add new category
+            </span>
+        </div>
+    </div>
+    {% for c in categories %}
+    <div class="cat" data-id="{{ c.id }}" data-name="{{ c.name }}">
+        <div class="cat-name">
+            {{ c.name }}
+        </div>
+        <div class="cat-action">
+            <div class="cat-btn cat-nav">
+                <a href="/cat/{{ c.id }}/item/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+                <div class="cat-btn cat-rename">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </div>
+                <div class="cat-btn cat-delete">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block modals %}
+    {{ super() }}
+    <!-- Rename Category Modal -->
+    <div id="modalRename" class="modal modal-hide">
+        <div class="modal-box">
+            <div class="modal-header">
+        		<h4>Rename Category</h4>
+        	</div>
+            <div class="modal-content">
+                <label for="inputRename" class="mandatory">Category Name</label>
+                <input type="text" id="inputRename">
+                <br>
+                <p id="errorRename"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="saveRename">Save</button>
+                <button class="btn" id="cancelRename">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Create New Category Modal -->
+    <div id="modalCreate" class="modal modal-hide">
+        <div class="modal-box">
+        	<div class="modal-header">
+        		<h4>Create New Category</h4>
+            </div>
+            <div class="modal-content">
+                <label for="inputCreate" class="mandatory">Category Name</label>
+                <input type="text" id="inputCreate">
+                <br>
+                <p id="errorCreate"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="saveCreate">Save</button>
+                <button class="btn" id="cancelCreate">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Category Modal -->
+    <div id="modalDelete" class="modal modal-hide">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h4>Delete Category</h4>
+            </div>
+            <div class="modal-content">
+                <p>Are you sure you want to delete the category?</p>
+                <br>
+                <p id="errorDelete"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="saveDelete">Yes</button>
+                <button class="btn" id="cancelDelete">No</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
